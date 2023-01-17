@@ -12,8 +12,9 @@ class TrendingMovies extends StatelessWidget {
     return  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const ModifiedText(text: "Trending Movies", size: 26,),
-        Container(
+        const ModifiedText(text: "Trending Movies", size: 26,color: Colors.white,),
+        const SizedBox(height: 6,),
+        SizedBox(
           height: 270,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
@@ -23,7 +24,7 @@ class TrendingMovies extends StatelessWidget {
                   onTap: () {
 
                   },
-                  child: Container(
+                  child: SizedBox(
                     width: 140,
                     child:Column(
                       children: [
@@ -36,13 +37,11 @@ class TrendingMovies extends StatelessWidget {
                           ),
 height: 200,
                         ),
-                        SizedBox(height: 5,),
+                        const SizedBox(height: 5,),
 
                         ModifiedText(
                         size: 15,
-                        text: trending![index]['title'] != null
-                        ? trending![index]['title']
-                            : 'Loading')
+                        text: trending![index]['title'] ?? 'Loading', color: Colors.white,),
 
                       ],
                     ) ,
