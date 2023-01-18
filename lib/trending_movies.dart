@@ -1,4 +1,5 @@
 import 'package:ariob_movies/Widget/modified_text.dart';
+import 'package:ariob_movies/description.dart';
 import 'package:flutter/material.dart';
 class TrendingMovies extends StatelessWidget {
   final List? trending;
@@ -22,9 +23,20 @@ class TrendingMovies extends StatelessWidget {
               itemBuilder: (context, index){
                 return InkWell(
                   onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>
+
+                        DescriptionPage(name: trending![index]['title'],
+                          description: trending![index]['overview'],
+                          bannerurl: 'https://image.tmdb.org/t/p/w500' + trending![index]['backdrop_path'],
+
+                          posturl: 'https://image.tmdb.org/t/p/w500' + trending![index]['poster_path'],
+                          vote: trending![index]['vote_average'].toString(),
+                          launchon: trending![index]['release_date'],
+
+                    )));
 
                   },
-                  child: Container(
+                  child: trending![index]['title'] !=null ?  Container(
                     padding: EdgeInsets.all(5),
                     width: 250,
                     child:Column(
@@ -51,7 +63,7 @@ height: 140,
 
                       ],
                     ) ,
-                  ),
+                  ): Container(),
 
                 );
 
