@@ -30,7 +30,9 @@ class TopRatedMovies extends StatelessWidget {
                     child:Column(
                       children: [
                         Container(
+
                           decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
                               image: DecorationImage(image: NetworkImage(
                                   'https://image.tmdb.org/t/p/w500' +
                                       topRated![index]['poster_path']),)
