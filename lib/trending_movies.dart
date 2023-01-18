@@ -13,7 +13,7 @@ class TrendingMovies extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const ModifiedText(text: "Trending Movies", size: 26,color: Colors.white,),
-        const SizedBox(height: 6,),
+        const SizedBox(height: 10,),
         SizedBox(
           height: 270,
           child: ListView.builder(
