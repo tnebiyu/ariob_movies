@@ -24,7 +24,8 @@ class TopRatedMovies extends StatelessWidget {
                   onTap: () {
 
                   },
-                  child: SizedBox(
+                  child: Container(
+                    padding: EdgeInsets.all(2),
                     width: 140,
                     child:Column(
                       children: [
