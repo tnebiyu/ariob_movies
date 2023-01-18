@@ -4,7 +4,7 @@ class ModifiedText extends StatelessWidget {
   final String ?text;
   final Color? color;
   final double? size;
-  final int? year;
+  final String? year;
   const ModifiedText({Key? key, this.text, this.color, this.size, this.year}) : super(key: key);
 
   @override
