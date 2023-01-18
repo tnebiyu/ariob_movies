@@ -39,9 +39,13 @@ height: 200,
                         ),
                         const SizedBox(height: 5,),
 
-                        ModifiedText(
-                        size: 15,
-                        text: trending![index]['title'] ?? 'Loading', color: Colors.white,),
+                        Column(
+                          children:[ ModifiedText(
+                          size: 15,
+                          text: trending![index]['title'] ?? 'Loading', color: Colors.white,
+                          year: trending![index]['first_air_date'],),
+
+                     ]   ),
 
                       ],
                     ) ,
