@@ -15,7 +15,7 @@ class TrendingMovies extends StatelessWidget {
         const ModifiedText(text: "Trending Movies", size: 26,color: Colors.white,),
         const SizedBox(height: 10,),
         SizedBox(
-          height: 270,
+          height: 200,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
               itemCount: trending!.length,
@@ -24,26 +24,27 @@ class TrendingMovies extends StatelessWidget {
                   onTap: () {
 
                   },
-                  child: SizedBox(
-                    width: 140,
+                  child: Container(
+                    padding: EdgeInsets.all(5),
+                    width: 250,
                     child:Column(
                       children: [
                         Container(
                           decoration: BoxDecoration(
                             image: DecorationImage(image: NetworkImage(
                                 'https://image.tmdb.org/t/p/w500' +
-                                    trending![index]['poster_path']),)
+                                    trending![index]['backdrop_path']),)
 
                           ),
-height: 200,
+height: 140,
                         ),
-                        const SizedBox(height: 5,),
+                        const SizedBox(height: 8,),
 
                         Column(
                           children:[ ModifiedText(
                           size: 15,
                           text: trending![index]['title'] ?? 'Loading', color: Colors.white,
-                          year: trending![index]['first_air_date'],),
+                         ),
 
                      ]   ),
 

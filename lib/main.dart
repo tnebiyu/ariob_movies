@@ -36,6 +36,8 @@ class _MyAppState extends State<MyApp> {
 
 
 });
+
+print(trendingMovies);
  }
   @override void initState(){
    loadMovies();
@@ -45,6 +47,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return  MaterialApp(
       title: 'Ariob Movies',
+debugShowCheckedModeBanner: false,
 
 home: Scaffold(
   backgroundColor: Colors.black,
@@ -55,9 +58,10 @@ home: Scaffold(
   body: ListView(
 
     children:  [
-      TvPage(tv: tv,),
       TrendingMovies(trending: trendingMovies,),
-      TopRatedMovies(topRated: topRatedMovies,)
+      TopRatedMovies(topRated: topRatedMovies,),
+      TvShow(tv: tv,),
+
 
 
 
