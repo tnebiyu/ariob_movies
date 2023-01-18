@@ -1,47 +1,58 @@
 import 'package:ariob_movies/Widget/modified_text.dart';
 import 'package:flutter/material.dart';
-class TopRated extends StatelessWidget {
+class TopRatedMovies extends StatelessWidget {
   final List? topRated;
-  const TopRated({Key? key, this.topRated}) : super(key: key);
+
+
+
+  const TopRatedMovies({Key? key, this.topRated}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const ModifiedText(
-          text: 'Top Rated Movies',
-          size: 26,
-        ),
-        const SizedBox(height: 10),
+        const ModifiedText(text: "Top Rated", size: 26,color: Colors.white,),
+        const SizedBox(height: 10,),
         SizedBox(
-            height: 270,
-            child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: topRated!.length,
-                itemBuilder: (context, index) {
-                  return SizedBox(
+          height: 270,
+          child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: topRated!.length,
+              itemBuilder: (context, index){
+                return InkWell(
+                  onTap: () {
+
+                  },
+                  child: SizedBox(
                     width: 140,
-                    child: Column(
+                    child:Column(
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: NetworkImage(
+                              image: DecorationImage(image: NetworkImage(
                                   'https://image.tmdb.org/t/p/w500' +
-                                      topRated![index]['poster_path']),
-                            ),
+                                      topRated![index]['poster_path']),)
+
                           ),
                           height: 200,
                         ),
-                        const SizedBox(height: 5),
+                        const SizedBox(height: 5,),
+
                         ModifiedText(
-                            size: 15,
-                            text: topRated![index]['title'] ?? 'Loading')
+                          size: 15,
+                          text: topRated![index]['original_title'] ?? 'Loading', color: Colors.white,),
+
                       ],
-                    ),
-                  );
-                }))
+                    ) ,
+                  ),
+
+                );
+
+
+              }),
+        )
       ],
     );
-}}
+  }
+}
