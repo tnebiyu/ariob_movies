@@ -3,6 +3,7 @@ import 'package:ariob_movies/top_rated.dart';
 import 'package:ariob_movies/trending_movies.dart';
 import 'package:flutter/material.dart';
 import 'package:tmdb_api/tmdb_api.dart';
+import 'package:ariob_movies/tv.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -18,7 +19,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   List? trendingMovies = [];
   List? topRatedMovies = [];
-  List tv = [];
+   List? tv = [];
   final  String apiKey = 'ddfa134d1913d074c2bc8742a47a261e';
   final  String accessToken = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZGZhMTM0ZDE5MTNkMDc0YzJiYzg3NDJhNDdhMjYxZSIsInN1YiI6IjYzYzY3MzBlNjZhZTRkMDA4NWNiNTQ4NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.MRveBb2ThFDt7I3QGIXR920UbLoMkSEaHbZm10MI4p0';
  Future loadMovies() async{
@@ -30,10 +31,13 @@ class _MyAppState extends State<MyApp> {
 
    setState(() {
   trendingMovies = trendingResults["results"];
-  topRatedMovies = topRatedResults["reuslts"];
+  topRatedMovies = topRatedResults["results"];
   tv = tvReuslts["results"];
 
+
 });
+
+  print(topRatedMovies);
  }
   @override void initState(){
    loadMovies();
@@ -53,8 +57,13 @@ home: Scaffold(
   body: ListView(
 
     children:  [
+      TvPage(tv: tv,),
       TrendingMovies(trending: trendingMovies,),
-      TopRated(topRated: topRatedMovies,),
+      TopRatedMovies(topRated: topRatedMovies,)
+
+
+
+
     ],
   ) ,
 )
