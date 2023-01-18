@@ -31,6 +31,7 @@ class TrendingMovies extends StatelessWidget {
                       children: [
                         Container(
                           decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
                             image: DecorationImage(image: NetworkImage(
                                 'https://image.tmdb.org/t/p/w500' +
                                     trending![index]['backdrop_path']),)
