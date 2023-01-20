@@ -1,5 +1,7 @@
 import 'package:ariob_movies/Widget/modified_text.dart';
 import 'package:flutter/material.dart';
+
+import 'description.dart';
 class TvShow extends StatelessWidget {
   final List ?tv;
 
@@ -22,15 +24,26 @@ class TvShow extends StatelessWidget {
               itemBuilder: (context, index){
                 return InkWell(
                   onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>
+
+                        DescriptionPage(name: tv![index]['title'],
+                          description: tv![index]['overview'],
+                          bannerurl: 'https://image.tmdb.org/t/p/w500' + tv![index]['backdrop_path'],
+
+                          posturl: 'https://image.tmdb.org/t/p/w500' + tv![index]['poster_path'],
+                          vote: tv![index]['vote_average'].toString(),
+                          launchon: tv![index]['release_date'],
+
+                        )));
 
                   },
                   child: Container(
                     width: 140,
-                    padding: EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(12),
                     child:Column(
                       children: [
                         Container(
-                          padding: EdgeInsets.all(5),
+                          padding: const EdgeInsets.all(5),
                           height: 200,
 
                           decoration: BoxDecoration(
@@ -41,7 +54,7 @@ class TvShow extends StatelessWidget {
                           ),
 
                         ),
-                    SizedBox(height: 5,),
+                    const SizedBox(height: 5,),
 
                         Column(
                             children:[ ModifiedText(
