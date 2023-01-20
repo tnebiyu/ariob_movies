@@ -36,8 +36,6 @@ class _MyAppState extends State<MyApp> {
 
 
 });
-
-print(trendingMovies);
  }
   @override void initState(){
    loadMovies();
