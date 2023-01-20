@@ -1,4 +1,5 @@
 import 'package:ariob_movies/Widget/modified_text.dart';
+import 'package:ariob_movies/constants.dart';
 import 'package:flutter/material.dart';
 
 import 'description.dart';
@@ -14,7 +15,7 @@ class TvShow extends StatelessWidget {
     return  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const ModifiedText(text: "Popular Tv Shows", size: 26,color: Colors.white,),
+        const ModifiedText(text: "Popular Tv Shows", size: 26,color: ktextColor),
         const SizedBox(height: 10,),
         SizedBox(
           height: 270,
@@ -37,7 +38,7 @@ class TvShow extends StatelessWidget {
                         )));
 
                   },
-                  child: Container(
+                  child: tv![index]['title'] !=null ? Container(
                     width: 140,
                     padding: const EdgeInsets.all(12),
                     child:Column(
@@ -59,14 +60,14 @@ class TvShow extends StatelessWidget {
                         Column(
                             children:[ ModifiedText(
                               size: 15,
-                              text: tv![index]['original_name'] ?? 'Loading', color: Colors.white,
+                              text: tv![index]['original_name'] ?? 'Loading', color: ktextColor,
                             ),
 
                             ]   ),
 
                       ],
                     ) ,
-                  ),
+                  ) : Container(),
 
                 );
 
