@@ -1,4 +1,6 @@
 import 'package:ariob_movies/Widget/modified_text.dart';
+import 'package:ariob_movies/constants.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 class DescriptionPage extends StatelessWidget {
   final String? name, description, bannerurl, posturl, vote, launchon;
@@ -7,7 +9,7 @@ class DescriptionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: kbacgroundColor,
       body: Container(
         child: ListView(
           children: [
@@ -24,7 +26,7 @@ class DescriptionPage extends StatelessWidget {
                       bottom: 10,
                       child: ModifiedText(
                     text: '  ⭐ Average rating ' + vote!,size: 18,
-                        color: Colors.white,
+                        color: ktextColor,
                   ))
                 ],
               ),
@@ -32,11 +34,11 @@ class DescriptionPage extends StatelessWidget {
             SizedBox(height: 15,),
             Container(
               padding: EdgeInsets.all(10),
-              child: ModifiedText(text: name ?? 'Not Loaded!',color: Colors.white,),),
+              child: ModifiedText(text: name ?? 'Not Loaded!',color: ktextColor,),),
             Container(
               padding: EdgeInsets.only(left: 10),
               child: ModifiedText(
-                text: 'Releasing on ' + launchon!, size: 14,color: Colors.white,
+                text: 'Releasing on ' + launchon!, size: 14,color: ktextColor,
               ),
             ),
             Row(
@@ -48,7 +50,7 @@ class DescriptionPage extends StatelessWidget {
                 ),
                 Flexible(
                   child: Container(
-                    child: ModifiedText(text: description, size: 18,color: Colors.white,),
+                    child: ModifiedText(text: description, size: 18,color: ktextColor,),
                   ),
                 )
               ],

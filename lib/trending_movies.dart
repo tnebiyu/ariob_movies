@@ -1,4 +1,5 @@
 import 'package:ariob_movies/Widget/modified_text.dart';
+import 'package:ariob_movies/constants.dart';
 import 'package:ariob_movies/description.dart';
 import 'package:flutter/material.dart';
 class TrendingMovies extends StatelessWidget {
@@ -13,7 +14,7 @@ class TrendingMovies extends StatelessWidget {
     return  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const ModifiedText(text: "Trending Movies", size: 26,color: Colors.white,),
+        const ModifiedText(text: "Trending Movies", size: 26,color: ktextColor),
         const SizedBox(height: 10,),
         SizedBox(
           height: 200,
@@ -56,7 +57,7 @@ height: 140,
                         Column(
                           children:[ ModifiedText(
                           size: 15,
-                          text: trending![index]['title'] ?? 'Loading', color: Colors.white,
+                          text: trending![index]['title'] ?? 'Loading', color: ktextColor,
                          ),
 
                      ]   ),

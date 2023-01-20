@@ -1,6 +1,7 @@
 import 'package:ariob_movies/Widget/modified_text.dart';
 import 'package:flutter/material.dart';
 
+import 'constants.dart';
 import 'description.dart';
 class TopRatedMovies extends StatelessWidget {
   final List? topRated;
@@ -14,7 +15,7 @@ class TopRatedMovies extends StatelessWidget {
     return  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const ModifiedText(text: "Top Rated Movies", size: 26,color: Colors.white,),
+        const ModifiedText(text: "Top Rated Movies", size: 26,color: ktextColor),
         const SizedBox(height: 10,),
         SizedBox(
           height: 270,
@@ -57,7 +58,7 @@ class TopRatedMovies extends StatelessWidget {
 
                         ModifiedText(
                           size: 15,
-                          text: topRated![index]['original_title'] ?? 'Loading', color: Colors.white,),
+                          text: topRated![index]['original_title'] ?? 'Loading', color: ktextColor),
 
                       ],
                     ) ,
