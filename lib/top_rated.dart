@@ -37,7 +37,7 @@ class TopRatedMovies extends StatelessWidget {
                         )));
 
                   },
-                  child: Container(
+                  child:topRated![index]['title'] !=null ?  Container(
                     padding: EdgeInsets.all(2),
                     width: 140,
                     child:Column(
@@ -61,7 +61,7 @@ class TopRatedMovies extends StatelessWidget {
 
                       ],
                     ) ,
-                  ),
+                  ) : Container(),
 
                 );
 
