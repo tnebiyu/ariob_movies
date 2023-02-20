@@ -1,0 +1,11 @@
+import 'package:flutter/material.dart';
+const kbacgroundColor = Colors.black;
+const ktextColor = Colors.white;
+const kThemoviedbURL = "https://api.themoviedb.org/3/movie";
+const kThemovieDiscoverdbURL = "https://api.themoviedb.org/3/discover/movie";
+const kThemoviedbSearchURL = "https://api.themoviedb.org/3/search/movie";
+const kThemoviedbImageURL = "https://image.tmdb.org/t/p/w300";
+const kThemoviedbImageURLw500 = "https://image.tmdb.org/t/p/w500";
+const kPopular = "Popular Tv Shows";
+const kTopRated = "Top Rated Movies";
+const kTrending = "Trending Movies";

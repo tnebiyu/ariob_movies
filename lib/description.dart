@@ -1,6 +1,5 @@
 import 'package:ariob_movies/Widget/modified_text.dart';
-import 'package:ariob_movies/constants.dart';
-import 'package:flutter/gestures.dart';
+import 'package:ariob_movies/utils/constants.dart';
 import 'package:flutter/material.dart';
 class DescriptionPage extends StatelessWidget {
   final String? name, description, bannerurl, posturl, vote, launchon;

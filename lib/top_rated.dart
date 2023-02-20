@@ -1,7 +1,7 @@
 import 'package:ariob_movies/Widget/modified_text.dart';
 import 'package:flutter/material.dart';
 
-import 'constants.dart';
+import 'utils/constants.dart';
 import 'description.dart';
 class TopRatedMovies extends StatelessWidget {
   final List? topRated;
@@ -15,7 +15,7 @@ class TopRatedMovies extends StatelessWidget {
     return  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const ModifiedText(text: "Top Rated Movies", size: 26,color: ktextColor),
+        const ModifiedText(text: kTopRated, size: 26,color: ktextColor),
         const SizedBox(height: 10,),
         SizedBox(
           height: 270,
@@ -29,9 +29,9 @@ class TopRatedMovies extends StatelessWidget {
 
                         DescriptionPage(name: topRated![index]['title'],
                           description: topRated![index]['overview'],
-                          bannerurl: 'https://image.tmdb.org/t/p/w500' + topRated![index]['backdrop_path'],
+                          bannerurl: kThemoviedbImageURLw500 + topRated![index]['backdrop_path'],
 
-                          posturl: 'https://image.tmdb.org/t/p/w500' + topRated![index]['poster_path'],
+                          posturl: kThemoviedbImageURLw500 + topRated![index]['poster_path'],
                           vote: topRated![index]['vote_average'].toString(),
                           launchon: topRated![index]['release_date'],
 
@@ -39,7 +39,7 @@ class TopRatedMovies extends StatelessWidget {
 
                   },
                   child:topRated![index]['title'] !=null ?  Container(
-                    padding: EdgeInsets.all(2),
+                    padding: const EdgeInsets.all(2),
                     width: 140,
                     child:Column(
                       children: [
@@ -48,7 +48,7 @@ class TopRatedMovies extends StatelessWidget {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12),
                               image: DecorationImage(image: NetworkImage(
-                                  'https://image.tmdb.org/t/p/w500' +
+                                  kThemoviedbImageURLw500 +
                                       topRated![index]['poster_path']),)
 
                           ),

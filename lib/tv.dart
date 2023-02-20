@@ -1,13 +1,10 @@
 import 'package:ariob_movies/Widget/modified_text.dart';
-import 'package:ariob_movies/constants.dart';
+import 'package:ariob_movies/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 import 'description.dart';
 class TvShow extends StatelessWidget {
   final List ?tv;
-
-
-
   const TvShow({Key? key, this.tv}) : super(key: key);
 
   @override
@@ -15,7 +12,7 @@ class TvShow extends StatelessWidget {
     return  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const ModifiedText(text: "Popular Tv Shows", size: 26,color: ktextColor),
+        const ModifiedText(text:kPopular, size: 26,color: ktextColor),
         const SizedBox(height: 10,),
         SizedBox(
           height: 270,
@@ -29,9 +26,9 @@ class TvShow extends StatelessWidget {
 
                         DescriptionPage(name: tv![index]['title'],
                           description: tv![index]['overview'],
-                          bannerurl: 'https://image.tmdb.org/t/p/w500' + tv![index]['backdrop_path'],
+                          bannerurl: kThemoviedbImageURLw500 + tv![index]['backdrop_path'],
 
-                          posturl: 'https://image.tmdb.org/t/p/w500' + tv![index]['poster_path'],
+                          posturl: kThemoviedbImageURLw500 + tv![index]['poster_path'],
                           vote: tv![index]['vote_average'].toString(),
                           launchon: tv![index]['release_date'],
 
@@ -49,7 +46,7 @@ class TvShow extends StatelessWidget {
 
                           decoration: BoxDecoration(
                               image: DecorationImage(image: NetworkImage(
-                                  'https://image.tmdb.org/t/p/w500' +
+                                  kThemoviedbImageURLw500 +
                                       tv![index]['poster_path'] ))
 
                           ),
